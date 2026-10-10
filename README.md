@@ -2,7 +2,7 @@
 
 A simulator and optimiser for the **Kaiju Cats** practice puzzle: three cats, a 5x7 map of buildings, $200 and 15 turns. Pick where to put commands so the cats smash as much as possible and reach their beds.
 
-> **Practice and learning only.** This repo works on the public practice game. It does not read the screen, press keys or play for you, and it should not be used on a live, scored assessment.
+> \*\*Practice and learning only.\*\* This repo works on the public practice game. It does not read the screen, press keys or play for you, and it should not be used on a live, scored assessment.
 
 ## The one idea you need
 
@@ -19,17 +19,17 @@ python -m pytest                     # includes a replay of a real game and the 
 
 ```bash
 # known boards answer instantly from the solution library
-python -m kaiju_cats solve boards/board_02.txt
+python -m kaiju\_cats solve boards/board\_02.txt
 
 # a new board: write it as 5 lines of 7 tokens (see below), then search for a few minutes
-python -m kaiju_cats solve my_board.txt --preset careful --minutes 10 --plot plan.png
+python -m kaiju\_cats solve my\_board.txt --preset careful --minutes 10 --plot plan.png
 
 # check a plan you already have
-python -m kaiju_cats show boards/board_02.txt tests/data/replay_board2.plan
+python -m kaiju\_cats show boards/board\_02.txt tests/data/replay\_board2.plan
 
-python -m kaiju_cats ceiling boards/board_02.txt     # upper bound set by the map
-python -m kaiju_cats library                          # what is already solved
-python -m kaiju_cats random-board --seed 3            # a fresh board to practise on
+python -m kaiju\_cats ceiling boards/board\_02.txt     # upper bound set by the map
+python -m kaiju\_cats library                          # what is already solved
+python -m kaiju\_cats random-board --seed 3            # a fresh board to practise on
 ```
 
 Board tokens: `CB`/`CR`/`CG` cat starts (Blue, Red, Green), `bB`/`bR`/`bG` beds, `GB` gray building (2 x 250), `YB` yellow building (2 x 500), `PP` plant (x2), `MD` mud, `SP` spikes, `RK` boulder, `..` empty, `--` unused.
@@ -39,8 +39,8 @@ Plans are printed as a map (`top/bottom` command per building, `P:` for plants, 
 In Python:
 
 ```python
-from kaiju_cats import Board, SolveConfig, solve, simulate
-board = Board.from_file("boards/board_02.txt")
+from kaiju\_cats import Board, SolveConfig, solve, simulate
+board = Board.from\_file("boards/board\_02.txt")
 result = solve(board, SolveConfig.preset("fast"))
 print(result.summary())
 print(result.plan.checklist())
@@ -50,7 +50,7 @@ print(result.plan.checklist())
 
 1. **Lazy decisions.** A command only matters when its floor is destroyed. The game is played forward and commands are decided at that moment, so plans never contain dead commands.
 2. **Parallel tempering.** Several chains at different temperatures explore plans and swap. One group of chains is run for each of the 6 possible bed-arrival orders (`fastsim.py`, compiled with numba; `solver.py`, run in parallel with joblib).
-3. **Exact local polish.** After the search, a depth-first search re-routes one cat (or two) exactly while the rest stay fixed (`lazy_dfs.py`), plus exhaustive small-change polishing.
+3. **Exact local polish.** After the search, a depth-first search re-routes one cat (or two) exactly while the rest stay fixed (`lazy\_dfs.py`), plus exhaustive small-change polishing.
 4. **Many seeds.** Success in the search is a lottery, so `--minutes` re-solves with fresh seeds and keeps the best.
 5. **Everything is verified** by a second, readable simulator (`simulator.py`) before it is reported.
 
@@ -58,18 +58,18 @@ The ML/data-science packages are used where they help: numba (speed), joblib (pa
 
 ## Results
 
-Python `careful` preset, 3 seeds (12, 13, 14), about 2.5-3 minutes per solve on a 2-core machine. "Best known" is the best plan I found over many runs of the original C++ solver; every plan in the library is re-verified by the Python simulator. "Ceiling" is the proven upper bound from `kaiju_cats ceiling` (generous, because it lets cats share plants).
+Python `careful` preset, 3 seeds (12, 13, 14), about 2.5-3 minutes per solve on a 2-core machine. "Best known" is the best plan I found over many runs of the original C++ solver; every plan in the library is re-verified by the Python simulator. "Ceiling" is the proven upper bound from `kaiju\_cats ceiling` (generous, because it lets cats share plants).
 
-| Board | Ceiling (bound) | Best known | Python, best of 3 seeds | Python, mean | Python / best known |
-|---|---:|---:|---:|---:|---:|
-| board_01 | 109,500 | 85,875 | 85,875 | 85,750 | 100.0% |
-| board_02 | 262,500 | 193,375 | 182,406 | 179,489 | 94.3% |
-| board_03 | 274,000 | 219,375 | 219,375 | 216,458 | 100.0% |
-| board_04 | 248,250 | 214,375 | 139,875 | 139,875 | 65.2% |
-| board_05 | 225,062 | 177,875 | 176,125 | 173,208 | 99.0% |
-| board_06 | 151,500 | 136,125 | 133,875 | 133,875 | 98.3% |
-| board_07 | 151,750 | 115,750 | 115,250 | 106,417 | 99.6% |
-| board_08 | 311,750 | 223,750 | 223,750 | 214,958 | 100.0% |
+|Board|Ceiling (bound)|Best known|Python, best of 3 seeds|Python, mean|Python / best known|
+|-|-:|-:|-:|-:|-:|
+|board\_01|109,500|85,875|85,875|85,750|100.0%|
+|board\_02|262,500|193,375|182,406|179,489|94.3%|
+|board\_03|274,000|219,375|219,375|216,458|100.0%|
+|board\_04|248,250|214,375|139,875|139,875|65.2%|
+|board\_05|225,062|177,875|176,125|173,208|99.0%|
+|board\_06|151,500|136,125|133,875|133,875|98.3%|
+|board\_07|151,750|115,750|115,250|106,417|99.6%|
+|board\_08|311,750|223,750|223,750|214,958|100.0%|
 
 What this says, plainly:
 
@@ -79,29 +79,29 @@ What this says, plainly:
 * Use `--minutes` for more seeds on a board that matters, and store the best result in the library (`solve` does it automatically).
 * The best known scores are not proven optimal. They sit at 72-90% of the ceilings, which are loose bounds.
 
-## Reinforcement learning (new)
+## Reinforcement learning
 
 A small neural-network policy (84k parameters) was trained with **expert iteration** on randomly generated boards: the policy plays, a fast local search improves its best games, and the policy learns to imitate the improved games. Given a new board, `rl-solve` samples thousands of games, polishes the best ones, adapts to the board, and verifies the answer in the independent simulator, all in about two minutes.
 
 ```bash
-python -m kaiju_cats rl-solve boards/board_04.txt --seconds 120
-python scripts/train_exit.py --iterations 700 --out runs/policy.pt     # retrain (about 90 min on 2 CPU cores)
+python -m kaiju\_cats rl-solve boards/board\_04.txt --seconds 120
+python scripts/train\_exit.py --iterations 700 --out runs/policy.pt     # retrain (about 90 min on 2 CPU cores)
 ```
 
-On the 8 real boards (never trained on), one 2-minute run reached **96-98% of the best-known total** over three seeds, and matched the best known score on every seed on 4 boards (it found 214,375 on board 4, where my search solver stalled at 139,875). It never beat a best-known score, and it is weak on boards 2 and 5. On 8 held-out generated boards it matched or beat the search solver's reference on all 8. Full tables, the failures along the way (plain policy gradient learned too slowly), and the reasons behind every design decision are in **[docs/RL.md](docs/RL.md)**.
+On the 8 real boards (never trained on), one 2-minute run reached **96-98% of the best-known total** over three seeds, and matched the best known score on every seed on 4 boards (it found 214,375 on board 4, where my search solver stalled at 139,875). It never beat a best-known score, and it is weak on boards 2 and 5. On 8 held-out generated boards it matched or beat the search solver's reference on all 8. Full tables, the failures along the way (plain policy gradient learned too slowly), and the reasons behind every design decision are in [**docs/RL.md**](docs/RL.md).
 
 Honesty note: part of the pipeline is classical search (the "expert"), so this is RL-guided search, not pure RL. The "policy sampling alone" column in docs/RL.md shows what the network does by itself (71% of the best-known total).
 
 ## Layout
 
 ```
-kaiju_cats/
+kaiju\_cats/
   rules.py       constants and the Rules switches
   board.py       board parsing
   plan.py        plans, checklists
   simulator.py   readable reference simulator (use this to learn the rules)
   fastsim.py     numba simulator + tempering kernels
-  lazy_dfs.py    exact re-optimisation of one cat's route
+  lazy\_dfs.py    exact re-optimisation of one cat's route
   solver.py      the pipeline and presets
   library.py     solved boards (data/library.json)
   bounds.py      ceiling per board
@@ -109,7 +109,7 @@ kaiju_cats/
   rl/            batched environment, policy network, training (expert iteration), board-time solver
   data/policy.pt the trained policy (340 KB)
 boards/          the 8 real boards seen so far
-boards_val/      8 generated boards used only for validation (never trained on)
+boards\_val/      8 generated boards used only for validation (never trained on)
 tests/           pytest, including the real-game replay
 docs/INSIGHTS.md tips, tricks, rule status
 docs/RL.md       the reinforcement-learning work, with every decision explained
@@ -122,3 +122,4 @@ docs/RL.md       the reinforcement-learning work, with every decision explained
 * The ceiling is a bound, not a promise: the best plan can be lower.
 
 MIT licensed.
+
