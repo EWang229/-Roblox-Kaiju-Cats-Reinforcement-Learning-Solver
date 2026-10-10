@@ -2,7 +2,7 @@
 
 This is the long-form explanation of `kaiju_cats/rl/`. Every design decision is listed with the reason for it, including the ones that failed. Practice and learning use only.
 
-**Short version.** A small neural network (84k parameters) learned a policy for the game by *expert iteration* on randomly generated boards. Given a new board, the policy plays thousands of games, a fast local search improves the best ones, and the policy adapts to that board for about two minutes. In one 2-minute run per board it reaches **96-98% of the best-known total** on the 8 real boards (three seeds: 96.2%, 98.4%, 96.8%), and 102% of my search solver's reference on 8 generated boards it never saw. On 4 of the 8 real boards it matched the best-known score on every seed, and on board 4 it found 214,375, which my Python search solver never found in 3 tries (it got 139,875). It does **not** beat the best-known scores: no run on any board found a score above the best-known plan. Whether 223,750 is the limit of board 8 is still open: the proven bound is 311,750, and neither the search solver, the C++ solver nor the RL pipeline has found anything higher.
+**Short version.** A small neural network (84k parameters) learned a policy for the game by *expert iteration* on randomly generated boards. Given a new board, the policy plays thousands of games, a fast local search improves the best ones, and the policy adapts to that board for about two minutes. In one 2-minute run per board it reaches **96-98% of the best-known total** on the 8 real boards (three seeds: 96.2%, 98.4%, 96.8%), and 102% of my search solver's reference on 8 generated boards it never saw. On 4 of the 8 real boards it matched the best-known score on every seed, and on board 4 it found 214,375, which my Python search solver never found in 3 tries (it got 139,875). It does **not** beat the best-known scores: no run on any board found a score above the best-known plan. Whether 223,750 is the best possible on board 8 is not known; neither the search solvers nor the RL pipeline found anything higher.
 
 ---
 
@@ -103,7 +103,7 @@ Best known = best plan from many runs of the C++ solver. Percentages are of the 
 
 ### Held-out generated boards
 
-The policy never saw these during training and the solve settings were not tuned on them. Their reference is the best of two runs of the Python search solver, so it is not a proven best.
+The policy never saw these during training and the solve settings were not tuned on them. Their reference is the best of two runs of the Python search solver; it is not a proven best.
 
 | Validation board | Search solver, best of 2 runs (about 6 min) | Policy sampling alone | **RL pipeline, 2 min** |
 |---|---:|---:|---:|
@@ -131,7 +131,7 @@ Other measurements:
 * "RL pipeline" is the full 2-minute solve above (one seed).
 * "Search solver" is the Python parallel-tempering solver from the rest of the repo (3 seeds, about 2.7 minutes each, 2 cores).
 * "Best known" is the best plan found over many runs of the original C++ solver (stored in the solution library).
-* The validation boards were generated like the training boards but never trained on, and their references come from two runs of the Python search solver, so they are lower bounds on what is possible.
+* The validation boards were generated like the training boards but never trained on, and their references come from two runs of the Python search solver, so better plans may exist.
 
 ## 8. Honest limitations
 
@@ -140,7 +140,7 @@ Other measurements:
 * **Tuning leakage.** The training boards are generated and the real boards were never trained on. But the board-time settings (temperature cycle, expert sizes) were chosen after looking at results on real boards 2, 5 and 8. For a clean test use the validation boards.
 * **One policy, one training run.** I did not do hyper-parameter sweeps, ablate the network size, or train with multiple seeds; the numbers could move with a different seed.
 * **Untested rule.** As elsewhere in the repo, a Power Up on a plant is assumed to be added after the doubling.
-* **No result above the best known.** I do not know whether the best known scores are the true optimum; the proven ceilings are 10-40% higher but loose.
+* **No result above the best known.** I do not know whether the best known scores are the true optimum.
 
 ## 9. Reproduce
 

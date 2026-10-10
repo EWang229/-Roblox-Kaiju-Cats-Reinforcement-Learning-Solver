@@ -3,6 +3,8 @@ from pathlib import Path
 
 import pandas as pd
 
+from kaiju_cats import Board, library
+
 R = Path(__file__).resolve().parents[1] / "results"
 
 
@@ -11,7 +13,8 @@ def pct(a, b):
 
 
 def real_table() -> str:
-    best = pd.read_csv(R / "ceilings.csv").set_index("board")["best_known"]
+    boards = sorted((R.parent / "boards").glob("*.txt"))
+    best = pd.Series({p.stem: library.lookup(Board.from_file(p))[1]["score"] for p in boards})
     search = pd.read_csv(R / "benchmark_careful.csv").groupby("board")["score"].agg(["mean", "max"])
     base = pd.read_csv(R / "baselines.csv").set_index("board") if (R / "baselines.csv").exists() else None
     rl0 = pd.read_csv(R / "rl_boards_120s_seed0.csv").set_index("board")

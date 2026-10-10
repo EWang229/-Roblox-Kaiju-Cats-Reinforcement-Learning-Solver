@@ -83,14 +83,6 @@ def cmd_random(a) -> int:
     return 0
 
 
-def cmd_ceiling(a) -> int:
-    from .bounds import ceiling
-    c = ceiling(_board(a.board))
-    print(f"ceiling {c.value:,}  (arrival order {c.order}, money split {c.split}, proven={c.exact})")
-    print("  This is a bound that no plan can beat; the true best is usually lower. It is set by the map alone.")
-    return 0
-
-
 def cmd_benchmark(a) -> int:
     from .benchmark import chain_scores, summarize
     board = _board(a.board)
@@ -163,10 +155,6 @@ def main(argv=None) -> None:
     s = sub.add_parser("random-board", help="generate a random board")
     s.add_argument("--seed", type=int, default=0), s.add_argument("--out")
     s.set_defaults(fn=cmd_random)
-
-    s = sub.add_parser("ceiling", help="upper bound on the score of a board (set by the map alone)")
-    s.add_argument("board")
-    s.set_defaults(fn=cmd_ceiling)
 
     s = sub.add_parser("benchmark", help="score distribution of independent search chains")
     s.add_argument("board")

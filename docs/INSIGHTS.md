@@ -10,13 +10,13 @@ This repo is for practice and learning. Don't use it on a live, scored assessmen
 
 ---
 
-## 1. The map decides the ceiling
+## 1. The map decides what is possible
 
 You choose commands, but the map decides how much those commands can be worth.
 
 * The board is a fixed 5x7 layout. Which tiles sit on which route, where the plants (x2) are, where the spikes and mud sit, and which cat starts next to which bed all come with the map. None of that is yours to change.
-* The best score is the maximum over a finite set of plans, so each map has one best score (its *ceiling*). On the 8 boards in this repo the best plans I found range from **85,875 to 223,750**, a 2.6x spread, all with the same $200 and 15 turns. The proven ceilings (generous upper bounds) span 109,500 to 311,750, and the best plans reach 72-90% of them (`results/ceilings.csv`).
-* A weak result on one map is not necessarily a weak plan. Compare against what the map allows, not against a number from a different map. `python -m kaiju_cats ceiling boards/board_02.txt` prints a bound that no plan can beat.
+* On the 8 boards in this repo the best plans I found range from **85,875 to 223,750**, a 2.6x spread, all with the same $200 and 15 turns.
+* A weak result on one map is not necessarily a weak plan. Compare against the best known score for that board, not against a number from a different map.
 * Boards repeat. Solved boards are in the library, so `solve` answers instantly for a board it has seen.
 
 ## 2. Where the points come from
