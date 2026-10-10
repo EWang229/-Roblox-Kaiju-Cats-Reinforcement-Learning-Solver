@@ -1,0 +1,9 @@
+board,best_known,ceiling,proven
+board_01,85875,109500,True
+board_02,193375,262500,True
+board_03,219375,274000,True
+board_04,214375,248250,True
+board_05,177875,225062,True
+board_06,136125,151500,True
+board_07,115750,151750,True
+board_08,223750,311750,True

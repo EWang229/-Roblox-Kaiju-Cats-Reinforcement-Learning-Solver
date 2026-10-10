@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kaiju-cats-solver"
+version = "0.1.0"
+description = "Simulator and optimiser for the Kaiju Cats practice puzzle (practice and learning use)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = ["numpy>=1.26", "numba>=0.59", "joblib>=1.3", "pandas>=2.0", "matplotlib>=3.8", "tqdm>=4.66"]
+
+[project.optional-dependencies]
+rl = ["torch>=2.2", "gymnasium>=0.29"]
+tune = ["optuna>=3.5"]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+kaiju-cats = "kaiju_cats.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["kaiju_cats*"]
+
+[tool.setuptools.package-data]
+kaiju_cats = ["data/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

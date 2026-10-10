@@ -1,0 +1,6 @@
+# a real board from the practice game
+CB GB GB .. YB PP --
+-- GB SP GB .. PP bR
+CR GB GB .. RK YB bG
+-- YB PP MD .. YB bB
+CG YB GB .. GB GB --

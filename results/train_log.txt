@@ -1,0 +1,84 @@
+it    10  apprentice mean      9657  best-of-64     23259  after expert     89221  ce 1.154  lr 1.0e-03      81s
+it    20  apprentice mean     13182  best-of-64     36992  after expert     92007  ce 0.978  lr 1.0e-03     170s
+it    30  apprentice mean     15142  best-of-64     42893  after expert     91930  ce 0.894  lr 1.0e-03     257s
+it    40  apprentice mean     16130  best-of-64     49124  after expert     95464  ce 0.841  lr 9.9e-04     343s
+it    50  apprentice mean     17468  best-of-64     51656  after expert     98189  ce 0.829  lr 9.9e-04     426s
+   validation best-of-256: 60,000 43,125 64,000 96,500 94,000 105,750 86,250 59,750
+it    60  apprentice mean     18174  best-of-64     56343  after expert     98835  ce 0.745  lr 9.8e-04     507s
+it    70  apprentice mean     18252  best-of-64     54949  after expert     93288  ce 0.752  lr 9.8e-04     585s
+it    80  apprentice mean     20757  best-of-64     65833  after expert    106656  ce 0.725  lr 9.7e-04     666s
+it    90  apprentice mean     20440  best-of-64     64497  after expert    106621  ce 0.678  lr 9.6e-04     750s
+it   100  apprentice mean     20231  best-of-64     62139  after expert     97860  ce 0.664  lr 9.6e-04     832s
+   validation best-of-256: 63,750 51,125 89,000 125,750 94,000 71,000 42,250 87,000
+it   110  apprentice mean     20290  best-of-64     64303  after expert    106748  ce 0.687  lr 9.5e-04     915s
+it   120  apprentice mean     20599  best-of-64     63751  after expert     99984  ce 0.657  lr 9.4e-04     996s
+it   130  apprentice mean     20421  best-of-64     63249  after expert     98719  ce 0.599  lr 9.3e-04    1075s
+it   140  apprentice mean     22088  best-of-64     69224  after expert    103702  ce 0.630  lr 9.1e-04    1153s
+it   150  apprentice mean     22396  best-of-64     72922  after expert    109617  ce 0.598  lr 9.0e-04    1234s
+   validation best-of-256: 89,750 59,500 102,000 114,000 84,000 85,250 45,750 98,750
+it   160  apprentice mean     22401  best-of-64     69847  after expert    107686  ce 0.610  lr 8.9e-04    1316s
+it   170  apprentice mean     21554  best-of-64     66983  after expert    110273  ce 0.614  lr 8.8e-04    1401s
+it   180  apprentice mean     21626  best-of-64     66006  after expert    105310  ce 0.608  lr 8.6e-04    1484s
+it   190  apprentice mean     21388  best-of-64     66676  after expert     98586  ce 0.591  lr 8.5e-04    1562s
+it   200  apprentice mean     22657  best-of-64     68313  after expert     99038  ce 0.607  lr 8.3e-04    1640s
+   validation best-of-256: 104,750 58,000 102,500 138,500 80,000 70,250 48,750 69,750
+it   210  apprentice mean     23329  best-of-64     71639  after expert    109857  ce 0.575  lr 8.1e-04    1719s
+it   220  apprentice mean     22668  best-of-64     69331  after expert    105776  ce 0.592  lr 8.0e-04    1795s
+it   230  apprentice mean     22772  best-of-64     69611  after expert     98705  ce 0.574  lr 7.8e-04    1868s
+it   240  apprentice mean     22756  best-of-64     70121  after expert    107517  ce 0.601  lr 7.6e-04    1948s
+it   250  apprentice mean     22459  best-of-64     70085  after expert    103798  ce 0.589  lr 7.5e-04    2026s
+   validation best-of-256: 69,500 65,375 101,500 147,250 94,000 109,250 118,500 111,000
+it   260  apprentice mean     22341  best-of-64     67542  after expert    103384  ce 0.564  lr 7.3e-04    2104s
+it   270  apprentice mean     22104  best-of-64     65660  after expert     96598  ce 0.578  lr 7.1e-04    2181s
+it   280  apprentice mean     22875  best-of-64     70879  after expert    104599  ce 0.571  lr 6.9e-04    2255s
+it   290  apprentice mean     22349  best-of-64     71989  after expert    101483  ce 0.562  lr 6.7e-04    2333s
+it   300  apprentice mean     23979  best-of-64     72562  after expert    103382  ce 0.590  lr 6.5e-04    2407s
+   validation best-of-256: 60,000 57,875 102,000 127,250 89,750 114,000 54,750 78,250
+it   310  apprentice mean     22362  best-of-64     67505  after expert     98353  ce 0.567  lr 6.3e-04    2484s
+it   320  apprentice mean     23477  best-of-64     72157  after expert    104340  ce 0.577  lr 6.1e-04    2643s
+it   330  apprentice mean     23544  best-of-64     75317  after expert    106652  ce 0.567  lr 5.9e-04    2719s
+it   340  apprentice mean     24270  best-of-64     77575  after expert    108033  ce 0.568  lr 5.7e-04    2798s
+it   350  apprentice mean     23987  best-of-64     72174  after expert    101856  ce 0.599  lr 5.5e-04    2875s
+   validation best-of-256: 83,000 74,375 105,250 159,250 94,000 143,500 81,000 97,375
+it   360  apprentice mean     23048  best-of-64     69193  after expert    100209  ce 0.562  lr 5.3e-04    2956s
+it   370  apprentice mean     23736  best-of-64     75610  after expert    104100  ce 0.560  lr 5.1e-04    3032s
+it   380  apprentice mean     23768  best-of-64     73903  after expert    107931  ce 0.582  lr 4.9e-04    3109s
+it   390  apprentice mean     23949  best-of-64     76924  after expert    112308  ce 0.577  lr 4.7e-04    3185s
+it   400  apprentice mean     25497  best-of-64     80659  after expert    110451  ce 0.586  lr 4.5e-04    3262s
+   validation best-of-256: 102,750 63,000 105,500 144,250 94,750 141,250 81,000 114,375
+it   410  apprentice mean     24159  best-of-64     75981  after expert    106889  ce 0.565  lr 4.3e-04    3341s
+it   420  apprentice mean     26050  best-of-64     80283  after expert    110318  ce 0.589  lr 4.1e-04    3421s
+it   430  apprentice mean     23487  best-of-64     72375  after expert     96483  ce 0.598  lr 3.9e-04    3499s
+it   440  apprentice mean     24004  best-of-64     74709  after expert    103627  ce 0.585  lr 3.7e-04    3575s
+it   450  apprentice mean     23498  best-of-64     74793  after expert    101280  ce 0.549  lr 3.5e-04    3650s
+   validation best-of-256: 64,000 71,875 98,500 108,000 100,250 99,250 75,000 121,250
+it   460  apprentice mean     26136  best-of-64     81797  after expert    109730  ce 0.571  lr 3.4e-04    3728s
+it   470  apprentice mean     24650  best-of-64     76617  after expert    111315  ce 0.595  lr 3.2e-04    3805s
+it   480  apprentice mean     24086  best-of-64     76787  after expert    110876  ce 0.628  lr 3.0e-04    3884s
+it   490  apprentice mean     24927  best-of-64     75306  after expert    103655  ce 0.586  lr 2.9e-04    3962s
+it   500  apprentice mean     24432  best-of-64     74443  after expert    103252  ce 0.610  lr 2.7e-04    4036s
+   validation best-of-256: 93,250 63,375 102,500 132,250 99,000 122,000 72,750 97,750
+it   510  apprentice mean     25221  best-of-64     80100  after expert    109949  ce 0.571  lr 2.5e-04    4113s
+it   520  apprentice mean     24713  best-of-64     76774  after expert    105294  ce 0.602  lr 2.4e-04    4191s
+it   530  apprentice mean     25655  best-of-64     80517  after expert    107242  ce 0.593  lr 2.2e-04    4268s
+it   540  apprentice mean     24692  best-of-64     78723  after expert    106639  ce 0.636  lr 2.1e-04    4346s
+it   550  apprentice mean     26044  best-of-64     82727  after expert    112456  ce 0.579  lr 2.0e-04    4424s
+   validation best-of-256: 82,000 53,375 101,250 144,250 99,750 84,750 81,500 121,000
+it   560  apprentice mean     25676  best-of-64     78103  after expert    103274  ce 0.594  lr 1.9e-04    4499s
+it   570  apprentice mean     24660  best-of-64     79091  after expert    109261  ce 0.612  lr 1.7e-04    4575s
+it   580  apprentice mean     24008  best-of-64     74694  after expert    100470  ce 0.611  lr 1.6e-04    4652s
+it   590  apprentice mean     23700  best-of-64     72624  after expert    101023  ce 0.602  lr 1.5e-04    4727s
+it   600  apprentice mean     25873  best-of-64     80670  after expert    110352  ce 0.601  lr 1.4e-04    4805s
+   validation best-of-256: 81,250 74,000 102,750 178,000 94,750 143,250 72,750 95,500
+it   610  apprentice mean     24758  best-of-64     78626  after expert    107265  ce 0.622  lr 1.4e-04    4884s
+it   620  apprentice mean     25165  best-of-64     79584  after expert    104131  ce 0.609  lr 1.3e-04    4959s
+it   630  apprentice mean     24747  best-of-64     75230  after expert    105484  ce 0.617  lr 1.2e-04    5037s
+it   640  apprentice mean     24312  best-of-64     75916  after expert    104225  ce 0.605  lr 1.2e-04    5112s
+it   650  apprentice mean     24503  best-of-64     76979  after expert    100889  ce 0.612  lr 1.1e-04    5186s
+   validation best-of-256: 82,000 71,875 126,250 121,750 94,750 128,000 80,750 96,250
+it   660  apprentice mean     26020  best-of-64     83156  after expert    114119  ce 0.651  lr 1.1e-04    5264s
+it   670  apprentice mean     24656  best-of-64     78029  after expert    107463  ce 0.609  lr 1.0e-04    5342s
+it   680  apprentice mean     25597  best-of-64     82121  after expert    106412  ce 0.623  lr 1.0e-04    5416s
+it   690  apprentice mean     25054  best-of-64     76963  after expert    105481  ce 0.612  lr 1.0e-04    5493s
+it   700  apprentice mean     26312  best-of-64     82813  after expert    111504  ce 0.626  lr 1.0e-04    5571s
+   validation best-of-256: 94,250 77,250 120,750 118,250 94,000 79,750 76,250 119,750

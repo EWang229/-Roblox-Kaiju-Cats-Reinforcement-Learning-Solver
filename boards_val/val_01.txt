@@ -1,0 +1,6 @@
+# generated validation board (never used for training)
+CR GB .. RK YB GB --
+-- .. PP .. YB GB bG
+CB MD .. GB YB GB bR
+-- GB YB PP GB PP bB
+CG GB YB MD PP YB --
